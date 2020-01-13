@@ -1,9 +1,9 @@
 {
-  "name": "react-starter",
+  "name": "expensifier",
   "version": "1.0.0",
-  "description": "A react project starter template with webpack, babel & eslint pre-cofigured.",
+  "description": "A simple expsense logger/manager using react + hooks + context api + fastapi.",
   "main": "index.js",
-  "repository": "https://github.com/maneeshd/react-project-starter.git",
+  "repository": "https://github.com/maneeshd/expensifier.git",
   "author": "Maneesh Divana <maneeshd77@gmail.com>",
   "license": "MIT",
   "private": false,
