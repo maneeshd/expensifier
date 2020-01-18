@@ -114,3 +114,8 @@ __pycache__/
 # other files
 *.pyc
 *.swp
+*.woff
+*.woff2
+*.eot
+*.otf
+*.ttf
