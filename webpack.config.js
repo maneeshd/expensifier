@@ -29,7 +29,7 @@ module.exports = (env, argv) => {
 
     const htmlWebpacker = new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src', 'template.html'),
-        title: 'React Project Starter',
+        title: 'Expensifier',
         favicon: path.resolve(__dirname, 'src', 'img', 'favicon.ico'),
         filename: 'index.html'
     });
@@ -59,7 +59,20 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.css$/,
-                    use: [MiniCssExtractPlugin.loader, 'css-loader']
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader'
+                    ]
+                },
+                {
+                    test: /\.(woff|woff2|eot|ttf|otf)$/,
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'static/fonts',
+                        publicPath: url => '../fonts/' + url
+                    },
+                    include: [/files/]
                 },
                 {
                     test: /\.(jpe?g|gif|png|svg)$/i,
