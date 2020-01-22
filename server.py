@@ -2,7 +2,7 @@
 Author            : Maneesh Divana <maneeshd77@gmail.com>
 Date              : Jan-05-2020
 Python            : 3.7.5
-Packages Required : starlette, uvicorn
+Packages Required : starlette, uvicorn, aiofiles
 
 *Development ASGI server using starlette & uvicorn*
 
@@ -66,7 +66,7 @@ async def favicon(request):
     return FileResponse(
         path="favicon.ico",
         headers={"Content-Type": MEDIA_TYPE_MAP.get("ico")},
-        media_type=MEDIA_TYPE_MAP.get("ico")
+        media_type=MEDIA_TYPE_MAP.get("ico"),
     )
 
 
