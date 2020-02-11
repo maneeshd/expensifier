@@ -1,4 +1,8 @@
-# React Starter Template
+# Expensifier
+
+A simple expense manager
+
+Live @ https://maneeshd-expensifier.herokuapp.com
 
 ## Usage
 
