@@ -25,15 +25,14 @@ app.config["COMPRESS_MIMETYPES"] = [
     "application/javascript",
     "image/jpg",
     "image/png",
-    "image/x-icon"
+    "image/x-icon",
 ]
 Compress(app)
 
 
-@app.route("/", defaults={"path": ""})
-@app.route("/<path:path>")
-def index(path):
-    print(path)
+@app.route("/")
+@app.route("/contact")
+def index():
     return send_file(join(HOME, "index.html"), mimetype="text/html")
 
 
