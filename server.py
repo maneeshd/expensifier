@@ -15,7 +15,7 @@ To Run:
 $ python -m uvicorn --reload server:app
 """
 from starlette.applications import Starlette
-from starlette.responses import FileResponse
+from starlette.responses import FileResponse, JSONResponse
 from starlette.middleware import Middleware
 from starlette.middleware.gzip import GZipMiddleware
 from starlette.staticfiles import StaticFiles
@@ -57,14 +57,18 @@ MEDIA_TYPE_MAP = {
 app = Starlette(debug=True, middleware=[Middleware(GZipMiddleware, minimum_size=1000)])
 
 # Static files handler
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount(
+    "/static",
+    StaticFiles(directory=path.join(CUR_DIR, "dist", "static")),
+    name="static",
+)
 
 
 # Routes
 @app.route("/favicon.ico", methods=["GET"])
 async def favicon(request):
     return FileResponse(
-        path="favicon.ico",
+        path=path.join(CUR_DIR, "dist", "faviocn.ico"),
         headers={"Content-Type": MEDIA_TYPE_MAP.get("ico")},
         media_type=MEDIA_TYPE_MAP.get("ico"),
     )
@@ -73,7 +77,14 @@ async def favicon(request):
 @app.route("/", methods=["GET"])
 async def homepage(request):
     return FileResponse(
-        path.join(CUR_DIR, "index.html"),
+        path.join(CUR_DIR, "dist", "index.html"),
         media_type=MEDIA_TYPE_MAP.get("html"),
         headers={"Content-Type": f"{MEDIA_TYPE_MAP.get('html')};charset=UTF-8"},
     )
+
+
+@app.route("/api/v1/is_valid_token", methods=["GET"])
+async def is_valid_token(request):
+    token_data = await request.json()
+    print(token_data)
+    return JSONResponse({"A": "B"})

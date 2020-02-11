@@ -10,6 +10,14 @@ import React, { createContext, useReducer, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 
+const isObjectEmpty = object => {
+    for (let _ in object) {
+        return false;
+    }
+    return true;
+};
+
+
 // Expenses State Action Reducer
 const expenseReducer = (state, action) => {
     switch (action.type) {
@@ -19,7 +27,7 @@ const expenseReducer = (state, action) => {
             return state.filter(({ eid }) => eid !== action.eid);
         case 'EDIT_EXPENSE':
             return state.map((expense) => {
-                if(expense.eid === action.eid) {
+                if(expense.eid === action.eid && !isObjectEmpty(action.updates)) {
                     return {
                         ...expense,
                         ...action.updates

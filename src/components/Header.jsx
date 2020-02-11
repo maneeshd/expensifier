@@ -7,6 +7,8 @@ import { NavLink } from 'react-router-dom';
 
 
 const Header = () => {
+    const [loggedIn, setLoggedIn] = useState(false);
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="mb-4 shadow-lg" >
             <Navbar.Brand as={NavLink} to="/" activeClassName="active" accessKey="home">

@@ -12,14 +12,25 @@ import About from './components/About';
 
 // const Contact = () => (<h1>Maneesh Divana</h1>);
 
+const requireAuth = (nextState, replace, next) => {
+    if (sessionStorage.getItem('authToken')) {
+        next();
+    } else {
+        replace({
+            pathname: '/about',
+            state: {nextPathName: nextState.location.pathname}
+        });
+    }
+};
+
 
 const AppRouter = () => (
     <BrowserRouter>
         <div>
             <Header />
             <Switch>
-                <Route exact path="/" component={Dashboard} />
-                <Route path="/dashboard" component={Dashboard} />
+                <Route exact path="/" component={Dashboard} onEnter={requireAuth} />
+                <Route path="/dashboard" component={Dashboard} onEnter={requireAuth} />
                 {/* <Route path="/add" component={AddExpense} />
                 <Route path="/edit/:eid*" component={EditExpense} />
                 <Route path="/delete" component={DeleteExpense} />

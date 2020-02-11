@@ -28,7 +28,8 @@ $gray-900: #212529 !default;
 $black:    #000 !default;
 */
 
-html, body {
+html,
+body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
@@ -37,11 +38,12 @@ html, body {
     word-wrap: break-word;
 }
 
-.btn-group-xs > .btn, .btn-xs {
-    padding  : .25rem .4rem;
-    font-size  : .875rem;
-    line-height  : .5;
-    border-radius : .2rem;
+.btn-group-xs>.btn,
+.btn-xs {
+    padding: .25rem .4rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
 }
 
 #profile-pic {
@@ -60,4 +62,16 @@ html, body {
 
 .input-group .form-control {
     display: compact !important;
+}
+
+.table>tbody>tr>th {
+    vertical-align: middle;
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+}
+
+.exp-cls {
+    max-width: 1024px;
 }

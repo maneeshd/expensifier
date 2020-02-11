@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+
+    <style>
+        html,
+        body {
+            font-family: Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <h1>Test</h1>
+    <div id="dateTest">
+        <label>Date:&nbsp;&nbsp;</label>
+        <input id="myDate" type="date" />
+        <br />
+        <br />
+        <button onclick="showDate();"><b>Show me the value!</b></button>
+    </div>
+    <script>
+        const init = () => {
+            document.getElementById("myDate").value = "2020-01-10";
+        };
+
+        const showDate = () => {
+            const myDate = document.getElementById("myDate");
+            console.log(myDate);
+            alert(myDate.value);
+        };
+    </script>
+</body>
+
+</html>
