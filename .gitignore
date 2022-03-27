@@ -114,3 +114,5 @@ __pycache__/
 # other files
 *.pyc
 *.swp
+
+dist/
