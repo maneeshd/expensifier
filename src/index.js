@@ -1,14 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/custom.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import AppRouter from './routers/AppRouter';
-import expensify_store from './store/expensify-store';
-import { Provider } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles/custom.css'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import AppRouter from './routers/AppRouter'
+import expensify_store from './store/expensify-store'
+import { Provider } from 'react-redux'
 
-
-const store = expensify_store();
-
+const store = expensify_store()
 
 /* Debugging Purposes Only
 import { add_expense } from "./actions/expense-actions"
@@ -21,11 +19,10 @@ store.dispatch(add_expense("House rent", 7700, moment("04-Oct-2018", "DD-MMM-YYY
 store.dispatch(add_expense("Gas bill", 150, moment("01-Oct-2018", "DD-MMM-YYYY"), ""))
 */
 
-
 const App = (
-    <Provider store={store}>
-        <AppRouter />
-    </Provider>
-);
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+)
 
-ReactDOM.render(App, document.getElementById('app'));
+ReactDOM.render(App, document.getElementById('app'))
