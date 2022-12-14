@@ -1,30 +1,37 @@
 # Expensifier
 
-A simple expense manager
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Live @ https://maneeshd-expensifier.herokuapp.com
+## Getting Started
 
-## Usage
+First, run the development server:
 
-1. Install **[yarn](https://yarnpkg.com/en/docs/install])** package manager in your system and add it to env path of your system.
+```bash
+yarn dev
+```
 
-2. Edit **[package.json](package.json)** to update app name, license etc as per requirement but ***don't*** edit dependencies and devDependencies (Use `yarn add/remove` to manipulate dependencies/devDependencies).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-3. Now execute: **`yarn install`**. This will install all the dependency packages.
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-4. Feel free to edit (optional) **[.eslintrc.json](.eslintrc.json)** to suit your style.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-5. Next, edit (optional) **[.babelrc](.babelrc)** and **[webpack.config.js](webpack.config.js)** if required.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-6. The main entry point of the application is **[src/index.js](src/index.js)** & the index page template is in **[src/index.html](src/index.html)**. (Webpack will inject code and put the final `index.html` in **[dist/index.html](dist/index.html)**).
+## Learn More
 
-7. Components `(*.jsx)` will be located in **[src/components](src/components)** & CSS in **[src/css/custom.css](ssrc/css/custom.css)**.
+To learn more about Next.js, take a look at the following resources:
 
-8. Compiled and built javascript files: `vendor.js` & `main.js` will be put in **[dist/static/js](dist/static/js)** and css files: `vendor.css` & `main.css` will be put in **[dist/static/css](dist/static/css)**
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-9. To run/serve the application in development mode(the compiled js files will be in memory), execute: `yarn serve`.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-10. To build the js bundle for production, execute: `yarn build`. This will compile, build and generate the `vendor.js`, `main.js`, `vendor.css` & `main.css` files for production, inject the css and js calls in index.html, copy image and favicon files to dist.
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Author
 

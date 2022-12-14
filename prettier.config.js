@@ -3,15 +3,7 @@ module.exports = {
   tabWidth: 2,
   semi: false,
   singleQuote: true,
-  printWidth: 120,
+  printWidth: 100,
   arrowParens: 'always',
-  overrides: [
-    {
-      files: '*.json',
-      options: {
-        tabWidth: 4,
-      },
-    },
-  ],
-  jsxBracketSameLine: false,
+  plugins: [require('prettier-plugin-tailwindcss')],
 }
